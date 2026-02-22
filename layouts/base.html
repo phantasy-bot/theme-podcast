@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{site.language}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{site.title}}</title>
+  <meta name="description" content="{{site.description}}">
+  <link rel="alternate" type="application/rss+xml" title="Podcast RSS" href="/feed.xml">
+  {{#if site.favicon}}<link rel="icon" href="{{site.favicon}}">{{/if}}
+  <link rel="stylesheet" href="/theme-assets/style.css">
+  <style>:root { --accent: {{theme.accentColor}}; }</style>
+  {{#if customCss}}<style>{{{customCss}}}</style>{{/if}}
+  {{{customHead}}}
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="podcast-brand">
+        {{#if agent.avatar}}<img src="{{agent.avatar}}" alt="{{agent.name}}" class="cover-art">{{/if}}
+        <h1>{{agent.name}}</h1>
+        <p class="tagline">{{site.description}}</p>
+      </div>
+      <nav class="subscribe-buttons">
+        <a href="/feed.xml" class="subscribe-btn rss">RSS</a>
+        <a href="#" class="subscribe-btn apple">Apple</a>
+        <a href="#" class="subscribe-btn spotify">Spotify</a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      {{{body}}}
+    </main>
+  </div>
+  {{#if theme.showPlayer}}
+  <div class="player-bar" id="audio-player">
+    <div class="player-info">
+      <span class="player-title">Now Playing</span>
+      <span class="player-episode" id="player-episode-name">Select an episode</span>
+    </div>
+    <audio id="audio-element" controls></audio>
+  </div>
+  {{/if}}
+</body>
+</html>

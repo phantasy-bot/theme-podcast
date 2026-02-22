@@ -1,0 +1,24 @@
+{
+  "name": "podcast",
+  "displayName": "Podcast",
+  "version": "1.0.0",
+  "description": "Podcast episode showcase with audio player",
+  "author": "Phantasy Labs",
+  "pages": {
+    "index": { "template": "pages/index.html", "route": "/" },
+    "episode": { "template": "pages/episode.html", "route": "/episode/:slug" }
+  },
+  "layouts": {
+    "base": "layouts/base.html"
+  },
+  "assets": "assets/",
+  "feeds": {
+    "rss": true,
+    "json": true
+  },
+  "configSchema": {
+    "accentColor": { "type": "color", "default": "#6366f1", "label": "Accent Color" },
+    "showPlayer": { "type": "boolean", "default": true, "label": "Show Audio Player" },
+    "episodesPerPage": { "type": "number", "default": 10, "label": "Episodes Per Page" }
+  }
+}

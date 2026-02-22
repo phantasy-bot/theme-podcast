@@ -1,0 +1,24 @@
+<article class="episode-detail">
+  <header class="episode-header">
+    <span class="episode-number-label">Episode</span>
+    <h1>{{page.title}}</h1>
+    <time datetime="{{isoDate page.publishedAt}}">{{formatDate page.publishedAt}}</time>
+  </header>
+
+  <div class="audio-player-container">
+    <audio controls preload="metadata" style="width: 100%;">
+      <source src="{{page.audioUrl}}" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="episode-notes">
+    <h2>Show Notes</h2>
+    <div class="notes-content">
+      {{{markdownToHtml page.content}}}
+    </div>
+  </div>
+
+  <nav class="episode-nav">
+    <a href="/">&larr; All Episodes</a>
+  </nav>
+</article>
