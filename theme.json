@@ -3,7 +3,7 @@
   "displayName": "Podcast",
   "version": "1.0.0",
   "description": "Audio-forward site theme for episode archives, guest pages, clips, and supporting show notes.",
-  "author": "Phantasy Team",
+  "author": "Phantasy Labs",
   "workspace": "site",
   "extensionKind": "presentation",
   "pages": {
@@ -15,5 +15,12 @@
   "layouts": {
     "base": "layouts/base.html"
   },
-  "assets": "assets"
+  "assets": "assets",
+  "configSchema": {
+    "accentColor": {
+      "type": "color",
+      "default": "#14b8a6",
+      "label": "Accent Color"
+    }
+  }
 }

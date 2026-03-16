@@ -2,5 +2,5 @@
   "slug": "theme-podcast",
   "kind": "theme",
   "repoUrl": "https://github.com/phantasy-bot/theme-podcast",
-  "phase": "scaffold-only"
+  "phase": "source-extracted"
 }
