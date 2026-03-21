@@ -1,24 +1,26 @@
 {
   "name": "podcast",
   "displayName": "Podcast",
-  "version": "1.0.0",
-  "description": "Podcast episode showcase with audio player",
+  "version": "2.0.1",
+  "description": "Audio-forward site theme for episode archives, guest pages, clips, and supporting show notes.",
   "author": "Phantasy Labs",
+  "workspace": "site",
+  "extensionKind": "presentation",
   "pages": {
-    "index": { "template": "pages/index.html", "route": "/" },
-    "episode": { "template": "pages/episode.html", "route": "/episode/:slug" }
+    "index": {
+      "template": "pages/index.html",
+      "route": "/"
+    }
   },
   "layouts": {
     "base": "layouts/base.html"
   },
-  "assets": "assets/",
-  "feeds": {
-    "rss": true,
-    "json": true
-  },
+  "assets": "assets",
   "configSchema": {
-    "accentColor": { "type": "color", "default": "#6366f1", "label": "Accent Color" },
-    "showPlayer": { "type": "boolean", "default": true, "label": "Show Audio Player" },
-    "episodesPerPage": { "type": "number", "default": 10, "label": "Episodes Per Page" }
+    "accentColor": {
+      "type": "color",
+      "default": "#14b8a6",
+      "label": "Accent Color"
+    }
   }
 }

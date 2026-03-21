@@ -1,34 +1,45 @@
-<section class="episodes-header">
-  <h2>Episodes</h2>
-  <span class="episode-count">{{page.total}} episodes</span>
+<section class="hero">
+  <p class="heroKicker">Companion site theme</p>
+  <h1>{{site.title}}</h1>
+  <p class="heroLead">{{site.description}}</p>
+  <div class="heroActions">
+    {{#each agent.socialLinks}}
+      <a href="{{url}}" class="heroButton" target="_blank" rel="noopener">{{platform}}</a>
+    {{/each}}
+  </div>
+</section>
+
+<section class="grid">
+  <article class="panel">
+    <p class="panelLabel">About</p>
+    <h2>{{agent.name}}</h2>
+    <p>{{agent.bio}}</p>
+  </article>
+  <article class="panel">
+    <p class="panelLabel">Personality</p>
+    <h2>How the companion shows up</h2>
+    <p>{{agent.personality}}</p>
+  </article>
 </section>
 
 {{#if page.posts}}
-<div class="episode-list">
-  {{#each page.posts}}
-  <article class="episode-card">
-    <div class="episode-number">#{{@index}}</div>
-    <div class="episode-content">
-      <h3><a href="/episode/{{slug}}">{{title}}</a></h3>
-      <p class="episode-meta">
-        <time datetime="{{isoDate publishedAt}}">{{formatDate publishedAt}}</time>
-      </p>
-      {{#if excerpt}}<p class="episode-excerpt">{{truncate excerpt 150}}</p>{{/if}}
+<section class="panel feedPanel">
+  <div class="feedHeader">
+    <div>
+      <p class="panelLabel">Content</p>
+      <h2>Latest posts</h2>
     </div>
-    <button class="play-btn" data-episode="{{slug}}" title="Play">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-    </button>
-  </article>
-  {{/each}}
-</div>
-
-{{#if page.hasMore}}
-<div class="pagination">
-  <a href="/?page={{page.nextPage}}" class="load-more">Load More Episodes</a>
-</div>
-{{/if}}
-{{else}}
-<div class="no-episodes">
-  <p>No episodes yet. Check back soon!</p>
-</div>
+  </div>
+  <div class="feedList">
+    {{#each page.posts}}
+      <article class="feedItem">
+        <div>
+          <h3><a href="/blog/{{slug}}">{{title}}</a></h3>
+          {{#if excerpt}}<p>{{excerpt}}</p>{{/if}}
+        </div>
+        <span>{{formatDate publishedAt}}</span>
+      </article>
+    {{/each}}
+  </div>
+</section>
 {{/if}}
