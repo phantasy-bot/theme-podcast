@@ -1,0 +1,7 @@
+{
+  "slug": "theme-podcast",
+  "kind": "theme",
+  "repoUrl": "https://github.com/phantasy-bot/theme-podcast",
+  "phase": "source-extracted",
+  "packageName": "@phantasy/theme-podcast"
+}
